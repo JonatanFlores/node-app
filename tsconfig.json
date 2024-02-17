@@ -1,29 +1,38 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    // File Generation Options
+    "outDir": "dist",
+    "sourceMap": true,
+    "removeComments": true,
+
+    // Module Resolution and Structure
     "module": "commonjs",
     "moduleResolution": "node",
-    "baseUrl": "./src",
-    "outDir": "./build",
-    "rootDirs": ["src", "tests"],
-    "strict": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "alwaysStrict": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "pretty": true,
-    "resolveJsonModule": true,
-    "plugins": [{ "transform": "typescript-transform-paths", "afterDeclarations": true }],
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["*"],
       "@/tests/*": ["../tests/*"]
-    }
+    },
+    "rootDirs": ["src", "tests"],
+    "resolveJsonModule": true,
+
+    // Language and Environment
+    "target": "ES2022",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    // Project Options
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Strictness and Type Checking
+    "strict": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true,
+
+    // Plugins - Added for transforming paths and other build-time transformations
+    "plugins": [{ "transform": "typescript-transform-paths", "afterDeclarations": true }]
   },
   "include": ["src", "tests"]
 }
