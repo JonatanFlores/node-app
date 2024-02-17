@@ -1,3 +1,5 @@
+.vscode
+.husky
 node_modules
 coverage
 dist
